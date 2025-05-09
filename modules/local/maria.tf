@@ -1,9 +1,7 @@
 resource "helm_release" "mariadb" {
-  name       = "mariadb"
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "mariadb"
-  namespace  = "default"
-  version    = "11.2.3" # exemplo, pode ajustar para a última versão estável
+  name      = "mariadb"
+  chart     = "https://charts.bitnami.com/bitnami/mariadb-11.3.0.tgz"  # ⚠️ URL completa do .tgz
+  namespace = "default"
 
   values = [
     yamlencode({
